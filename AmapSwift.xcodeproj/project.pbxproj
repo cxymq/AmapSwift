@@ -1,0 +1,670 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14BE018722CF2D760027657C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE018622CF2D760027657C /* AppDelegate.swift */; };
+		14BE018922CF2D760027657C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE018822CF2D760027657C /* ViewController.swift */; };
+		14BE018C22CF2D760027657C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BE018A22CF2D760027657C /* Main.storyboard */; };
+		14BE018E22CF2D770027657C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14BE018D22CF2D770027657C /* Assets.xcassets */; };
+		14BE019122CF2D770027657C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BE018F22CF2D770027657C /* LaunchScreen.storyboard */; };
+		14BE019C22CF2D770027657C /* AmapSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE019B22CF2D770027657C /* AmapSwiftTests.swift */; };
+		14BE01A722CF2D770027657C /* AmapSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE01A622CF2D770027657C /* AmapSwiftUITests.swift */; };
+		14BE01B822D2DE790027657C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE01B722D2DE780027657C /* SearchViewController.swift */; };
+		D204C9E03E564536F88D8318 /* Pods_AmapSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C486A888CB30C5B225F2AE44 /* Pods_AmapSwift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14BE019822CF2D770027657C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14BE017B22CF2D760027657C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14BE018222CF2D760027657C;
+			remoteInfo = AmapSwift;
+		};
+		14BE01A322CF2D770027657C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14BE017B22CF2D760027657C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14BE018222CF2D760027657C;
+			remoteInfo = AmapSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14BE018322CF2D760027657C /* AmapSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmapSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BE018622CF2D760027657C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		14BE018822CF2D760027657C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14BE018B22CF2D760027657C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		14BE018D22CF2D770027657C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14BE019022CF2D770027657C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		14BE019222CF2D770027657C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14BE019722CF2D770027657C /* AmapSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmapSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BE019B22CF2D770027657C /* AmapSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmapSwiftTests.swift; sourceTree = "<group>"; };
+		14BE019D22CF2D770027657C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14BE01A222CF2D770027657C /* AmapSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmapSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BE01A622CF2D770027657C /* AmapSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmapSwiftUITests.swift; sourceTree = "<group>"; };
+		14BE01A822CF2D770027657C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14BE01B422CF39500027657C /* AmapSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AmapSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		14BE01B522D2CE920027657C /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		14BE01B722D2DE780027657C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2FC7DD1ABCAF4D1CB4DD3BD1 /* Pods-AmapSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmapSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmapSwift/Pods-AmapSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		B4DAE07A4C13FC1C301C3E00 /* Pods-AmapSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmapSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmapSwift/Pods-AmapSwift.release.xcconfig"; sourceTree = "<group>"; };
+		C486A888CB30C5B225F2AE44 /* Pods_AmapSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmapSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14BE018022CF2D760027657C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D204C9E03E564536F88D8318 /* Pods_AmapSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BE019422CF2D770027657C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BE019F22CF2D770027657C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14BE017A22CF2D760027657C = {
+			isa = PBXGroup;
+			children = (
+				14BE018522CF2D760027657C /* AmapSwift */,
+				14BE019A22CF2D770027657C /* AmapSwiftTests */,
+				14BE01A522CF2D770027657C /* AmapSwiftUITests */,
+				14BE018422CF2D760027657C /* Products */,
+				E3544DE58C1E07358CCCB45C /* Pods */,
+				1FF57FE639319BD2FE979958 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		14BE018422CF2D760027657C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14BE018322CF2D760027657C /* AmapSwift.app */,
+				14BE019722CF2D770027657C /* AmapSwiftTests.xctest */,
+				14BE01A222CF2D770027657C /* AmapSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14BE018522CF2D760027657C /* AmapSwift */ = {
+			isa = PBXGroup;
+			children = (
+				14BE018622CF2D760027657C /* AppDelegate.swift */,
+				14BE018822CF2D760027657C /* ViewController.swift */,
+				14BE01B722D2DE780027657C /* SearchViewController.swift */,
+				14BE018A22CF2D760027657C /* Main.storyboard */,
+				14BE018D22CF2D770027657C /* Assets.xcassets */,
+				14BE018F22CF2D770027657C /* LaunchScreen.storyboard */,
+				14BE019222CF2D770027657C /* Info.plist */,
+				14BE01B422CF39500027657C /* AmapSwift-Bridging-Header.h */,
+			);
+			path = AmapSwift;
+			sourceTree = "<group>";
+		};
+		14BE019A22CF2D770027657C /* AmapSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				14BE019B22CF2D770027657C /* AmapSwiftTests.swift */,
+				14BE019D22CF2D770027657C /* Info.plist */,
+			);
+			path = AmapSwiftTests;
+			sourceTree = "<group>";
+		};
+		14BE01A522CF2D770027657C /* AmapSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14BE01A622CF2D770027657C /* AmapSwiftUITests.swift */,
+				14BE01A822CF2D770027657C /* Info.plist */,
+			);
+			path = AmapSwiftUITests;
+			sourceTree = "<group>";
+		};
+		1FF57FE639319BD2FE979958 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14BE01B522D2CE920027657C /* libstdc++.6.0.9.tbd */,
+				C486A888CB30C5B225F2AE44 /* Pods_AmapSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3544DE58C1E07358CCCB45C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FC7DD1ABCAF4D1CB4DD3BD1 /* Pods-AmapSwift.debug.xcconfig */,
+				B4DAE07A4C13FC1C301C3E00 /* Pods-AmapSwift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14BE018222CF2D760027657C /* AmapSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14BE01AB22CF2D770027657C /* Build configuration list for PBXNativeTarget "AmapSwift" */;
+			buildPhases = (
+				B628DA5871188109975FE275 /* [CP] Check Pods Manifest.lock */,
+				14BE017F22CF2D760027657C /* Sources */,
+				14BE018022CF2D760027657C /* Frameworks */,
+				14BE018122CF2D760027657C /* Resources */,
+				DF92B58ADD2F8F044E25D990 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AmapSwift;
+			productName = AmapSwift;
+			productReference = 14BE018322CF2D760027657C /* AmapSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14BE019622CF2D770027657C /* AmapSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14BE01AE22CF2D770027657C /* Build configuration list for PBXNativeTarget "AmapSwiftTests" */;
+			buildPhases = (
+				14BE019322CF2D770027657C /* Sources */,
+				14BE019422CF2D770027657C /* Frameworks */,
+				14BE019522CF2D770027657C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14BE019922CF2D770027657C /* PBXTargetDependency */,
+			);
+			name = AmapSwiftTests;
+			productName = AmapSwiftTests;
+			productReference = 14BE019722CF2D770027657C /* AmapSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14BE01A122CF2D770027657C /* AmapSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14BE01B122CF2D770027657C /* Build configuration list for PBXNativeTarget "AmapSwiftUITests" */;
+			buildPhases = (
+				14BE019E22CF2D770027657C /* Sources */,
+				14BE019F22CF2D770027657C /* Frameworks */,
+				14BE01A022CF2D770027657C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14BE01A422CF2D770027657C /* PBXTargetDependency */,
+			);
+			name = AmapSwiftUITests;
+			productName = AmapSwiftUITests;
+			productReference = 14BE01A222CF2D770027657C /* AmapSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14BE017B22CF2D760027657C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Qi Wang";
+				TargetAttributes = {
+					14BE018222CF2D760027657C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					14BE019622CF2D770027657C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 14BE018222CF2D760027657C;
+					};
+					14BE01A122CF2D770027657C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 14BE018222CF2D760027657C;
+					};
+				};
+			};
+			buildConfigurationList = 14BE017E22CF2D760027657C /* Build configuration list for PBXProject "AmapSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14BE017A22CF2D760027657C;
+			productRefGroup = 14BE018422CF2D760027657C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14BE018222CF2D760027657C /* AmapSwift */,
+				14BE019622CF2D770027657C /* AmapSwiftTests */,
+				14BE01A122CF2D770027657C /* AmapSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14BE018122CF2D760027657C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BE019122CF2D770027657C /* LaunchScreen.storyboard in Resources */,
+				14BE018E22CF2D770027657C /* Assets.xcassets in Resources */,
+				14BE018C22CF2D760027657C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BE019522CF2D770027657C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BE01A022CF2D770027657C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B628DA5871188109975FE275 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AmapSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF92B58ADD2F8F044E25D990 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AmapSwift/Pods-AmapSwift-resources.sh",
+				"${PODS_ROOT}/AMap2DMap/MAMapKit.framework/AMap.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AmapSwift/Pods-AmapSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14BE017F22CF2D760027657C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BE01B822D2DE790027657C /* SearchViewController.swift in Sources */,
+				14BE018922CF2D760027657C /* ViewController.swift in Sources */,
+				14BE018722CF2D760027657C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BE019322CF2D770027657C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BE019C22CF2D770027657C /* AmapSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14BE019E22CF2D770027657C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14BE01A722CF2D770027657C /* AmapSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14BE019922CF2D770027657C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14BE018222CF2D760027657C /* AmapSwift */;
+			targetProxy = 14BE019822CF2D770027657C /* PBXContainerItemProxy */;
+		};
+		14BE01A422CF2D770027657C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14BE018222CF2D760027657C /* AmapSwift */;
+			targetProxy = 14BE01A322CF2D770027657C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		14BE018A22CF2D760027657C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14BE018B22CF2D760027657C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		14BE018F22CF2D770027657C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14BE019022CF2D770027657C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14BE01A922CF2D770027657C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14BE01AA22CF2D770027657C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14BE01AC22CF2D770027657C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FC7DD1ABCAF4D1CB4DD3BD1 /* Pods-AmapSwift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBUW6A3REB;
+				INFOPLIST_FILE = AmapSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cl.AmapSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./AmapSwift/AmapSwift-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14BE01AD22CF2D770027657C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4DAE07A4C13FC1C301C3E00 /* Pods-AmapSwift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KBUW6A3REB;
+				INFOPLIST_FILE = AmapSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cl.AmapSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./AmapSwift/AmapSwift-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		14BE01AF22CF2D770027657C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ429UWLN6;
+				INFOPLIST_FILE = AmapSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wq.AmapSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmapSwift.app/AmapSwift";
+			};
+			name = Debug;
+		};
+		14BE01B022CF2D770027657C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ429UWLN6;
+				INFOPLIST_FILE = AmapSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wq.AmapSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AmapSwift.app/AmapSwift";
+			};
+			name = Release;
+		};
+		14BE01B222CF2D770027657C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ429UWLN6;
+				INFOPLIST_FILE = AmapSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wq.AmapSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AmapSwift;
+			};
+			name = Debug;
+		};
+		14BE01B322CF2D770027657C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EJ429UWLN6;
+				INFOPLIST_FILE = AmapSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wq.AmapSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AmapSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14BE017E22CF2D760027657C /* Build configuration list for PBXProject "AmapSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BE01A922CF2D770027657C /* Debug */,
+				14BE01AA22CF2D770027657C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14BE01AB22CF2D770027657C /* Build configuration list for PBXNativeTarget "AmapSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BE01AC22CF2D770027657C /* Debug */,
+				14BE01AD22CF2D770027657C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14BE01AE22CF2D770027657C /* Build configuration list for PBXNativeTarget "AmapSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BE01AF22CF2D770027657C /* Debug */,
+				14BE01B022CF2D770027657C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14BE01B122CF2D770027657C /* Build configuration list for PBXNativeTarget "AmapSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14BE01B222CF2D770027657C /* Debug */,
+				14BE01B322CF2D770027657C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14BE017B22CF2D760027657C /* Project object */;
+}
