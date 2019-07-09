@@ -13,5 +13,6 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
+#import <MJRefresh/MJRefresh.h>
 
 #endif /* AmapSwift_Bridging_Header_h */

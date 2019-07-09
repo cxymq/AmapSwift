@@ -8,5 +8,5 @@ platform:ios,'10.0'
 pod 'AMapLocation'
 pod 'AMap2DMap'
 pod 'AMapSearch'
-
+pod 'MJRefresh'
  end

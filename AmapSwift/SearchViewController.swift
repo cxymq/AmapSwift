@@ -31,6 +31,9 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 	//地图的height约束
 	@IBOutlet weak var mapViewHeightConstraints: NSLayoutConstraint!
 	
+	//搜索周边的位置当前页
+	var currentPage: Int = 1
+	
 	//周边搜索设置项
 	var searchRequest: AMapPOIAroundSearchRequest?
 	//周边搜索对象
@@ -81,6 +84,14 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 		locationManager?.locationTimeout = 5
 		//   逆地理请求超时时间，最低2s，此处设置为2s
 		locationManager?.reGeocodeTimeout = 5
+		
+		tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+			//下拉刷新获取下一页内容
+			self.currentPage += 1
+			self.searchRequest?.page = self.currentPage
+			self.searchRequest?.location = AMapGeoPoint.location(withLatitude: CGFloat(self.currentLocationCoordinate2D?.latitude ?? 0), longitude: CGFloat(self.currentLocationCoordinate2D?.longitude ?? 0))
+			self.searchAPI?.aMapPOIAroundSearch(self.searchRequest)
+		})
 		
 		mapView.delegate = self
 		//如果您需要进入地图就显示定位小蓝点，则需要下面两行代码
@@ -231,6 +242,7 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 		mapView.addAnnotation(centerAnnotation)
 		
 		if isSelectedAddress == false {
+			currentPage = 1
 			
 			tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
 			searchRequest?.location = AMapGeoPoint.location(withLatitude: CGFloat(centerCoordiante.latitude), longitude: CGFloat(centerCoordiante.longitude))
@@ -244,9 +256,18 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 	//MARK:------周边查询的回调AMapSearchDelegate
 	//POI查询回调函数
 	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
-		let remoteArr = response.pois
+		let remoteArr: Array = response.pois
+		if currentPage == 1 {
+			dataArr = remoteArr
+		} else {
+			dataArr?.append(contentsOf: remoteArr)
+		}
 		
-		dataArr = remoteArr
+		if remoteArr.count < 50 {
+			tableView.mj_footer.endRefreshingWithNoMoreData()
+		} else {
+			tableView.mj_footer.endRefreshing()
+		}
 		
 		tableView.reloadData()
 	}
@@ -299,26 +320,32 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 		if tableView == self.tableView {
 			let mapPOI = dataArr?[indexPath.row]
 			if let t_mapPOI = mapPOI {
-				let locationCoorinate = CLLocationCoordinate2D(latitude: Double(t_mapPOI.location.latitude), longitude: Double(t_mapPOI.location.longitude))
-				//地图显示中心点以及注解跟随点击变化
-				mapView.setCenter(locationCoorinate, animated: true)
-				setCenterLocationAnnotation(locationCoordinate2d: locationCoorinate, title: t_mapPOI.name, subtitle: t_mapPOI.address)
+				if let location = t_mapPOI.location {
+					let locationCoorinate = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
+					//地图显示中心点以及注解跟随点击变化
+					mapView.setCenter(locationCoorinate, animated: true)
+					setCenterLocationAnnotation(locationCoordinate2d: locationCoorinate, title: t_mapPOI.name, subtitle: t_mapPOI.address)
+				}
+				
 			}
 		} else {
 			
 			let tip = tips[indexPath.row]
-			let locationCoorinate = CLLocationCoordinate2D(latitude: Double(tip.location.latitude), longitude: Double(tip.location.longitude))
-			//地图显示中心点以及注解跟随点击变化
-			mapView.setCenter(locationCoorinate, animated: true)
-			setCenterLocationAnnotation(locationCoordinate2d: locationCoorinate, title: tip.name, subtitle: tip.address)
-			isSelectedAddress = true
+			if let location = tip.location {
+				let locationCoorinate = CLLocationCoordinate2D(latitude: Double(location.latitude), longitude: Double(location.longitude))
+				//地图显示中心点以及注解跟随点击变化
+				mapView.setCenter(locationCoorinate, animated: true)
+				setCenterLocationAnnotation(locationCoordinate2d: locationCoorinate, title: tip.name, subtitle: tip.address)
+				isSelectedAddress = true
+				
+				searchResultView.isHidden = true
+				//搜索框取消搜索状态
+				searchController.isActive = false
+				
+				searchRequest?.location = AMapGeoPoint.location(withLatitude: location.latitude, longitude: location.longitude)
+				searchAPI?.aMapPOIAroundSearch(searchRequest)
+			}
 			
-			searchResultView.isHidden = true
-			//搜索框取消搜索状态
-			searchController.isActive = false
-			
-			searchRequest?.location = AMapGeoPoint.location(withLatitude: tip.location.latitude, longitude: tip.location.longitude)
-			searchAPI?.aMapPOIAroundSearch(searchRequest)
 		}
 	}
 	

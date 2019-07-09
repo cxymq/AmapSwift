@@ -6,11 +6,13 @@ PODS:
     - AMapFoundation (~> 1.4)
   - AMapSearch (6.1.1):
     - AMapFoundation (~> 1.4)
+  - MJRefresh (3.1.15.3)
 
 DEPENDENCIES:
   - AMap2DMap
   - AMapLocation
   - AMapSearch
+  - MJRefresh
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - AMapFoundation
     - AMapLocation
     - AMapSearch
+    - MJRefresh
 
 SPEC CHECKSUMS:
   AMap2DMap: cf0bfd6ae97951b55cc061903b814f924ba6c221
   AMapFoundation: d1af683f29b344e469b043561105dd656033a881
   AMapLocation: 55116a2c8956eab7550cbb56e989aa5cdcc424e3
   AMapSearch: 3dcbf85c403a2a0fe0eda5318caabc272b31f5e1
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
 
-PODFILE CHECKSUM: 1b0b107fe458de92fd946cbe349cd415dca4d5b7
+PODFILE CHECKSUM: 83c5bcd40998145bb00c91c3416b324adacba81c
 
 COCOAPODS: 1.5.2
