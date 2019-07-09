@@ -8,15 +8,20 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMapViewDelegate, AMapSearchDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+
+let SearchBarHeight: CGFloat = 44.0
+
+class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMapViewDelegate, AMapSearchDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
 	
 	var dataArr: Array<AMapPOI>?
 	
 	var locationManager: AMapLocationManager?
 
-	var searchController: UISearchController?
-	//搜索框
-	@IBOutlet weak var searchBar: UISearchBar!
+	//搜索视图
+	var searchController: UISearchController = UISearchController.init(searchResultsController: nil)
+//	var searchResultView: UITableView =  UITableView.init(frame: CGRect.init(x: 0, y: 64, width: UIScreen.init().bounds.size.width, height: UIScreen.init().bounds.size.height - 64))
+	@IBOutlet weak var searchResultView: UITableView!
+	
 	//地图视图
 	@IBOutlet weak var mapView: MAMapView!
 	//显示查询周边结果
@@ -25,8 +30,6 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 	@IBOutlet weak var searchBarTopConstraints: NSLayoutConstraint!
 	//地图的height约束
 	@IBOutlet weak var mapViewHeightConstraints: NSLayoutConstraint!
-	//显示搜索结果
-	@IBOutlet weak var searchTableView: UITableView!
 	
 	//周边搜索设置项
 	var searchRequest: AMapPOIAroundSearchRequest?
@@ -56,8 +59,18 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 
         // Do any additional setup after loading the view.
 		dataArr = Array.init()
-		
+
+		//设置搜索控制器
 		searchController = UISearchController.init(searchResultsController: nil)
+		searchController.delegate = self
+		searchController.searchResultsUpdater = self
+		//搜索时，背景变暗
+		searchController.dimsBackgroundDuringPresentation = false
+		let searchBar = self.searchController.searchBar
+		searchBar.frame = CGRect.init(x: 0, y: 64, width: self.view.frame.size.width, height: SearchBarHeight)
+		searchBar.barStyle = .default
+		searchBar.isTranslucent = true
+		self.view.addSubview(searchBar)
 		
 		//初始化AMapLocationManager对象，设置代理。
 		locationManager = AMapLocationManager()
@@ -92,7 +105,32 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 		//开始定位
 		startLocation()
     }
-    
+	
+	//MARK:------搜索控制器的相关代理UISearchResultsUpdating && UISearchControllerDelegate
+	func updateSearchResults(for searchController: UISearchController) {
+		if searchController.searchBar.text?.count == 0 {
+			return
+		}
+		
+		searchResultView.isHidden = false
+		
+		let tips = AMapInputTipsSearchRequest.init()
+		tips.keywords = searchController.searchBar.text
+		tips.city = currentCity
+		//搜索输入的地点
+		searchAPI?.aMapInputTipsSearch(tips)
+
+	}
+	
+	func willPresentSearchController(_ searchController: UISearchController) {
+		searchController.searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: SearchBarHeight)
+		
+	}
+	
+	func didDismissSearchController(_ searchController: UISearchController) {
+		searchController.searchBar.frame = CGRect.init(x: 0, y: 64, width: self.view.frame.size.width, height: SearchBarHeight)
+		
+	}
 
 	//MARK:------带逆地理的单次定位
 	func startLocation() {
@@ -160,7 +198,7 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 		currentLocationAnnotation = pointAnnotation
 	}
 	
-	//MARK:------MAMapViewDelegate
+	//MARK:------地图标注以及拖动地图中心点不变 MAMapViewDelegate
 	func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
 		if annotation.isKind(of: MAPointAnnotation.self) {
 			let pointReuseIndentifier = "pointReuseIndentifier"
@@ -203,7 +241,7 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 		
 	}
 	
-	//MARK:------AMapSearchDelegate
+	//MARK:------周边查询的回调AMapSearchDelegate
 	//POI查询回调函数
 	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
 		let remoteArr = response.pois
@@ -219,100 +257,68 @@ class SearchViewController: UIViewController, AMapLocationManagerDelegate, MAMap
 			tips = remoteArr
 			//处于搜索状态
 			isSearchStatus = true
-			searchTableView.reloadData()
+			searchResultView.reloadData()
 		}
 	}
 	
-	//MARK:------UISearchBarDelegate
-	
-	func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-		let tips = AMapInputTipsSearchRequest.init()
-		tips.keywords = searchBar.text
-		tips.city = currentCity
-		//搜索输入的地点
-		searchAPI?.aMapInputTipsSearch(tips)
-		//显示搜索结果
-		searchTableView.isHidden = false
-
-		return true
-	}
-	
-	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-		isSearchStatus = false
-		//隐藏搜索结果
-		searchTableView.isHidden = true
-		tableView.reloadData()
-	}
-	
-	//MARK:------UITableViewDelegate && UITableViewDataSource
+	//MARK:------展示周边地点以及搜索的周边 UITableViewDelegate && UITableViewDataSource
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 60
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if isSearchStatus == true {
-			return tips.count
+		if tableView == self.tableView {
+			return (dataArr?.count)!
 		}
-		return (dataArr?.count)!
+		return tips.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		if isSearchStatus == true {
-			let cellID = "Cell2"
-			var cell = searchTableView.dequeueReusableCell(withIdentifier: cellID)
-			if cell == nil {
-				cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellID)
-			}
-			
-			let tip = tips[indexPath.row]
-			
-			cell?.textLabel?.text = tip.name
-			cell?.detailTextLabel?.text = tip.district
-			return cell!
-		} else {
-			let cellID = "Cell"
-			var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-			if cell == nil {
-				cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellID)
-			}
+		let cellID = "Cell"
+		var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+		if cell == nil {
+			cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellID)
+		}
+		if tableView == self.tableView {
 			let mapPOI = dataArr?[indexPath.row]
 			if let t_mapPOI = mapPOI {
 				cell?.textLabel?.text = t_mapPOI.name
 				cell?.detailTextLabel?.text = t_mapPOI.address
 			}
+		} else {
+			let tip = tips[indexPath.row]
 			
-			return cell!
+			cell?.textLabel?.text = tip.name
+			cell?.detailTextLabel?.text = tip.district
 		}
-		
+		return cell!
 		
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if isSearchStatus == true {
+		if tableView == self.tableView {
+			let mapPOI = dataArr?[indexPath.row]
+			if let t_mapPOI = mapPOI {
+				let locationCoorinate = CLLocationCoordinate2D(latitude: Double(t_mapPOI.location.latitude), longitude: Double(t_mapPOI.location.longitude))
+				//地图显示中心点以及注解跟随点击变化
+				mapView.setCenter(locationCoorinate, animated: true)
+				setCenterLocationAnnotation(locationCoordinate2d: locationCoorinate, title: t_mapPOI.name, subtitle: t_mapPOI.address)
+			}
+		} else {
+			
 			let tip = tips[indexPath.row]
 			let locationCoorinate = CLLocationCoordinate2D(latitude: Double(tip.location.latitude), longitude: Double(tip.location.longitude))
 			//地图显示中心点以及注解跟随点击变化
 			mapView.setCenter(locationCoorinate, animated: true)
 			setCenterLocationAnnotation(locationCoordinate2d: locationCoorinate, title: tip.name, subtitle: tip.address)
 			isSelectedAddress = true
-
-			//返回上一级地图界面,取消编辑状态
-//			searchBar.endEditing(true)
-			//隐藏搜索结果
-//			searchTableView.isHidden = true
-			searchBarCancelButtonClicked(searchBar)
+			
+			searchResultView.isHidden = true
+			//搜索框取消搜索状态
+			searchController.isActive = false
 			
 			searchRequest?.location = AMapGeoPoint.location(withLatitude: tip.location.latitude, longitude: tip.location.longitude)
 			searchAPI?.aMapPOIAroundSearch(searchRequest)
-		} else {
-			let mapPOI = dataArr?[indexPath.row]
-			if let t_mapPOI = mapPOI {
-				let locationCoorinate = CLLocationCoordinate2D(latitude: Double(t_mapPOI.location?.latitude ?? 0), longitude: Double(t_mapPOI.location.longitude))
-				//地图显示中心点以及注解跟随点击变化
-				mapView.setCenter(locationCoorinate, animated: true)
-				setCenterLocationAnnotation(locationCoordinate2d: locationCoorinate, title: t_mapPOI.name, subtitle: t_mapPOI.address)
-			}
 		}
 	}
 	
