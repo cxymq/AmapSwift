@@ -44,7 +44,8 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 
 原因：Xcode10.0以上，Apple废除了 libstdc++6.0.9（即lstdc++6.0.9），需要将其重新加入lib路径。
 
-解决方法[参考](https://www.jianshu.com/p/35d34828e607）：下载libstdc++库，下载链接，提取码arms
+解决方法[参考](https://www.jianshu.com/p/35d34828e607)：
+下载libstdc++库，[下载链接](https://pan.baidu.com/s/17BYR_qawWkivLYfET8gocA#list/path=%2F)，提取码arms
 
 将 libstdc++、libstdc++.6、libstdc++6.0.9拷贝到Xcode的如下目录：
 
