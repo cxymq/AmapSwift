@@ -38,7 +38,7 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 
  
 
-|`**注意：**`|
+**注意：**
 
 错误：Xcode会报错误==>library not found for -lstdc++.6.0.9’
 
@@ -69,7 +69,7 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
  
 
 初始化AMapLocationManager
-```
+```swift
         //初始化AMapLocationManager对象，设置代理。
 		locationManager = AMapLocationManager()
 		locationManager?.delegate = self
@@ -79,10 +79,11 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 		locationManager?.locationTimeout = 2
 		//   逆地理请求超时时间，最低2s，此处设置为2s
 		locationManager?.reGeocodeTimeout = 2
- ```  
+```
+
 
 设置搜索项AMapPOIAroundSearchRequest
-```
+```swift
         searchRequest = AMapPOIAroundSearchRequest.init()
 		///查询关键字，多个关键字用“|”分割
 		searchRequest?.keywords = "商务住宅|餐饮服务|生活服务"
@@ -92,10 +93,10 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 		searchRequest?.offset = 50
 		///是否返回扩展信息，默认为 NO。
 		searchRequest?.requireExtension = true
- ```  
+```
 
 请求带逆地理
-```
+```swift
 // 带逆地理（返回坐标和地址信息）。将下面代码中的 true 改成 false ，则不会返回地址信息。
 		locationManager?.requestLocation(withReGeocode: true, completionBlock: { (location: CLLocation?, reGeocode: AMapLocationReGeocode?, error: Error?) in
 			
@@ -144,7 +145,7 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 			
 			self.textView.text = addressInfo
 		})
- ```  
+```
 
 2.搜索定位
 
