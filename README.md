@@ -1,21 +1,21 @@
 # AmapSwift
 高德地图API的简单使用
 
-环境：
+## 环境：
 
 Xcode10.1
 
 Swift4.2
 
-真机6s，ios11
+真机6s，ios11  
  
 
-高德地图API使用：
+## 高德地图API使用：
  
 
 需要到[高德开发者平台](https://lbs.amap.com)申请开发者账号，创建应用，获取对应平台的key。
 
-查看[API](https://lbs.amap.com/api)，也可到 示例代码 中获取官方demo。
+查看[API](https://lbs.amap.com/api)，也可到 示例代码 中获取官方demo。  
 
 具体实现：
 
@@ -26,7 +26,7 @@ pod 'AMapLocation'
 
            2.为了能够正常使用地图API，需要引入桥接头文件AmapSwift_Bridging_Header_h，并且在TARGETS->Build Settings-> Swift Compiler - Code Generation -> Objective-C Bridging Header 引入路径。
 
-具体查看demo。
+具体查看demo。  
 
  
 
@@ -38,19 +38,19 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 
  
 
-注意：
+|`**注意：**`|
 
 错误：Xcode会报错误==>library not found for -lstdc++.6.0.9’
 
 原因：Xcode10.0以上，Apple废除了 libstdc++6.0.9（即lstdc++6.0.9），需要将其重新加入lib路径。
 
-解决方法（[参考](https://www.jianshu.com/p/35d34828e607）)：下载libstdc++库，下载链接，提取码arms
+解决方法[参考](https://www.jianshu.com/p/35d34828e607）：下载libstdc++库，下载链接，提取码arms
 
 将 libstdc++、libstdc++.6、libstdc++6.0.9拷贝到Xcode的如下目录：
 
 1.真机环境：/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/
 
-2.模拟器环境：/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib/
+2.模拟器环境：/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib/  
 
  
 
@@ -58,7 +58,7 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 
 本Demo的控件大多是故事板拖拽完成，因 UISearchController 未找到相应的控件，使用代码构建。当然，所有拖拽空间皆可由代码完成。
 
-初步学习集成可以先参考Demo中 单次定位部分内容，后续学习参考 搜索定位。Demo中有注释。
+初步学习集成可以先参考Demo中 单次定位部分内容，后续学习参考 搜索定位。Demo中有注释。  
 
  
 
@@ -79,7 +79,7 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 		locationManager?.locationTimeout = 2
 		//   逆地理请求超时时间，最低2s，此处设置为2s
 		locationManager?.reGeocodeTimeout = 2
- ```
+ ```  
 
 设置搜索项AMapPOIAroundSearchRequest
 ```
@@ -92,7 +92,7 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 		searchRequest?.offset = 50
 		///是否返回扩展信息，默认为 NO。
 		searchRequest?.requireExtension = true
- ```
+ ```  
 
 请求带逆地理
 ```
@@ -144,14 +144,14 @@ NSLocationAlwaysAndWhenInUseUsageDescription和 NSLocationWhenInUseUsageDescrip
 			
 			self.textView.text = addressInfo
 		})
- ```
+ ```  
 
 2.搜索定位
 
 用到 定位管理类（AMapLocationManager）、周边搜索设置类（AMapPOIAroundSearchRequest）、搜索类（AMapSearchAPI）和 地图视图类（MAMapView：用于显示地图、标注注解）。还有搜索控制器（UISearchController）等。
 
 Demo中定义多个属性，都标有详细注释。如 dataArr（定位的周边结果）、tips（搜索返回的搜索结果）、tableView（显示周边结果）、searchResultview（显示搜索的结果）。
-
+  
 -----------------------------------------------------------
 
 [个人博客](https://blog.csdn.net/Crazy_SunShine)
